@@ -14,7 +14,8 @@ public class BookShelfSpec {
         List<String> books = shelf.books();
         assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
     }
-    @Test
+
+   /* @Test
     public void bookshelfContainsTwoBooksWhenTwoBooksAdded() {
         BookShelf shelf = new BookShelf();
         shelf.add("Effective Java");
@@ -22,4 +23,15 @@ public class BookShelfSpec {
         List<String> books = shelf.books();
         assertEquals(2, books.size(), () -> "BookShelf should have two books.");
     }
+
+    */
+
+
+   @Test
+   void bookshelfContainsTwoBooksWhenTwoBooksAdded() {
+       BookShelf shelf = new BookShelf();
+       shelf.add("Effective Java", "Code Complete");
+       List<String> books = shelf.books();
+       assertEquals(2, books.size(), () -> "BookShelf should have two books.");
+   }
 }
